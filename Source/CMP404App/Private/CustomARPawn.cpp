@@ -20,8 +20,8 @@ void ACustomARPawn::BeginPlay()
 
 	//UKismetSystemLibrary::PrintString(this, FString(TEXT("Hello world")), true, true, FLinearColor::Red, 5);
 
-	//UARSessionConfig* Config = NewObject<UARSessionConfig>();
-	//UARBlueprintLibrary::StartARSession(Config);
+	UARSessionConfig* Config = NewObject<UARSessionConfig>();
+	UARBlueprintLibrary::StartARSession(Config);
 }
 
 // Called every frame
