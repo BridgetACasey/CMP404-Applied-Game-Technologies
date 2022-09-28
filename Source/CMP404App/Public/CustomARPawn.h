@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+#include "Camera/CameraComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "CustomARPawn.generated.h"
@@ -14,6 +14,9 @@ class CMP404APP_API ACustomARPawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ACustomARPawn();
+
+	UPROPERTY(Category = "myCategory", VisibleAnywhere, BlueprintReadWrite) USceneComponent* SceneComponent;
+	UPROPERTY(Category = "myCategory", VisibleAnywhere, BlueprintReadWrite) UCameraComponent* CameraComponent;
 
 protected:
 	// Called when the game starts or when spawned
