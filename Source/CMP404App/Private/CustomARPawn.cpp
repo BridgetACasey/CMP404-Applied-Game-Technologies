@@ -17,6 +17,11 @@ ACustomARPawn::ACustomARPawn()
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
 	CameraComponent->SetupAttachment(SceneComponent);
+
+	//Camera information
+	//APlayerCameraManager* CameraManager = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+	//FVector CamLocation = CameraManager->GetCameraLocation();
+	//FVector CamForward = CameraManager->GetCameraRotation().Vector();
 }
 
 // Called when the game starts or when spawned
@@ -35,12 +40,11 @@ void ACustomARPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	float t = UGameplayStatics::GetRealTimeSeconds(GetWorld());
-	float scale = 2.0f / (3.0f - cos(2.0f * t));
-	float x = 5.0f * (scale * cos(t));
-	float y = 5.0f * (scale * sin(2.0f * t) / 2.0f);
-
-	SetActorLocation(FVector(GetActorLocation().X + x, GetActorLocation().Y + y, GetActorLocation().Z + x));
+	//float t = UGameplayStatics::GetRealTimeSeconds(GetWorld());
+	//float scale = 2.0f / (3.0f - cos(2.0f * t));
+	//float x = 5.0f * (scale * cos(t));
+	//float y = 5.0f * (scale * sin(2.0f * t) / 2.0f);
+	//SetActorLocation(FVector(GetActorLocation().X + x, GetActorLocation().Y + y, GetActorLocation().Z + x));
 }
 
 // Called to bind functionality to input
