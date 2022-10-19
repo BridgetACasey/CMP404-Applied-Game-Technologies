@@ -3,6 +3,7 @@
 
 #include "CustomARPawn.h"
 #include "ARBlueprintLibrary.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
@@ -33,6 +34,13 @@ void ACustomARPawn::BeginPlay()
 void ACustomARPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	float t = UGameplayStatics::GetRealTimeSeconds(GetWorld());
+	float scale = 2.0f / (3.0f - cos(2.0f * t));
+	float x = 5.0f * (scale * cos(t));
+	float y = 5.0f * (scale * sin(2.0f * t) / 2.0f);
+
+	SetActorLocation(FVector(GetActorLocation().X + x, GetActorLocation().Y + y, GetActorLocation().Z + x));
 }
 
 // Called to bind functionality to input
