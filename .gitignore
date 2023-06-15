@@ -1,3 +1,12 @@
+# Ignore only specific Rider files/directories
+# For syntax see: https://stackoverflow.com/a/14422549/12124
+/.idea/*
+!/.idea/.idea.*
+/.idea/.idea.*/*
+!/.idea/.idea.*/.idea
+/.idea/.idea.*/.idea/*
+!/.idea/.idea.*/.idea/runConfigurations
+
 # Visual Studio 2015 user specific files
 .vs/
 
@@ -72,3 +81,13 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Saved
+DerivedDataCache
+.git
+.vscode
+Intermediate
+UE5_AR.code-workspace
+.ignore
+.DS_Store
+Content/.DS_Store
+UE5_AR.sln.DotSettings.user
